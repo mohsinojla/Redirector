@@ -3,37 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redirecting...</title>
-<meta http-equiv="refresh" content="0">
-<style>
-  body {
-    font-family: system-ui, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background: #111;
-    color: #eee;
-  }
-  a { color: #4da6ff; }
-</style>
+<title>Supremacy Cup</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<p id="msg">Redirecting&hellip; if you are not redirected, <a id="link" href="#">click here</a>.</p>
-<script>
-  fetch('redirect.json?_=' + Date.now())
-    .then(function (res) { return res.json(); })
-    .then(function (data) {
-      if (data && data.url) {
-        document.getElementById('link').href = data.url;
-        window.location.replace(data.url);
-      }
-    })
-    .catch(function (err) {
-      document.getElementById('msg').textContent = 'Could not load redirect target.';
-      console.error(err);
-    });
-</script>
+
+<div class="hero">
+  <img id="hero-banner" class="hero-banner" src="assets/images/hero-banner.svg" alt="Event banner">
+  <div class="hero-content">
+    <a id="register-btn" class="register-btn" href="#" target="_blank" rel="noopener">Register Now</a>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Event <span>Highlights</span></h2>
+    <div id="gallery-grid" class="gallery-grid"></div>
+  </div>
+</section>
+
+<section class="social-section">
+  <div class="container">
+    <h2 class="section-title">Stay <span>Connected</span></h2>
+    <div id="social-grid" class="social-grid"></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">Our <span>Collaborators</span></h2>
+    <div id="collab-grid" class="collab-grid"></div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; <span id="year"></span> Supremacy Cup. All rights reserved.</p>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="script.js"></script>
 </body>
 </html>

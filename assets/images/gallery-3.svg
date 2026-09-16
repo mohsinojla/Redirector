@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#241300"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#g3)"/>
+  <g fill="#ff8a00" opacity="0.9">
+    <polygon points="300,80 320,140 380,140 330,175 350,235 300,198 250,235 270,175 220,140 280,140"/>
+  </g>
+  <text x="300" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="34" fill="#fff" letter-spacing="3">HUGE PRIZE POOL</text>
+  <text x="300" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#ffb066">Compete for glory and rewards.</text>
+</svg>

@@ -1,0 +1,43 @@
+{
+  "event": {
+    "title": "SUPREMACY CUP",
+    "subtitle": "PUBG MOBILE ESPORTS TOURNAMENT",
+    "hero_image": "assets/images/hero-banner.svg"
+  },
+  "register": {
+    "label": "Register Now",
+    "url": "https://itu-pubgm-tournament.vercel.app/"
+  },
+  "gallery": [
+    "assets/images/gallery-1.svg",
+    "assets/images/gallery-2.svg",
+    "assets/images/gallery-3.svg"
+  ],
+  "social": {
+    "instagram": {
+      "image": "assets/images/instagram-icon.svg",
+      "url": "https://instagram.com/your_handle"
+    },
+    "whatsapp": {
+      "image": "assets/images/whatsapp-icon.svg",
+      "url": "https://chat.whatsapp.com/your_invite_code"
+    }
+  },
+  "collaborators": [
+    {
+      "name": "Collaborator One",
+      "logo": "assets/images/collab-placeholder.svg",
+      "url": "https://example.com"
+    },
+    {
+      "name": "Collaborator Two",
+      "logo": "assets/images/collab-placeholder.svg",
+      "url": "https://example.com"
+    },
+    {
+      "name": "Collaborator Three",
+      "logo": "assets/images/collab-placeholder.svg",
+      "url": "https://example.com"
+    }
+  ]
+}
