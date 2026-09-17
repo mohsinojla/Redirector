@@ -14,9 +14,9 @@ function el(tag, props, children) {
     return;
   }
   renderHero(config);
-  renderGallery(config);
-  renderSocial(config);
-  renderCollaborators(config);
+  renderCtaStack(config);
+  renderCardGrid('event-management-grid', config.event_management);
+  renderCardGrid('collab-grid', config.collaborators);
 })();
 
 function renderHero(config) {
@@ -34,40 +34,34 @@ function renderHero(config) {
   }
 }
 
-function renderGallery(config) {
-  const grid = document.getElementById('gallery-grid');
-  grid.innerHTML = '';
-  (config.gallery || []).forEach((src) => {
-    grid.appendChild(el('img', { src, alt: 'Event artwork' }));
-  });
-}
-
-function renderSocial(config) {
-  const grid = document.getElementById('social-grid');
-  grid.innerHTML = '';
+function renderCtaStack(config) {
+  const stack = document.getElementById('cta-stack');
+  stack.innerHTML = '';
   const social = config.social || {};
-  if (social.instagram) {
-    grid.appendChild(
-      el('a', { href: social.instagram.url, target: '_blank', rel: 'noopener', className: 'social-card' }, [
-        el('img', { src: social.instagram.image, alt: 'Instagram' }),
-        el('span', { textContent: 'Follow us' }),
+
+  if (social.whatsapp) {
+    stack.appendChild(
+      el('a', { href: social.whatsapp.url, target: '_blank', rel: 'noopener', className: 'cta-card cta-whatsapp' }, [
+        el('img', { src: social.whatsapp.image, alt: 'WhatsApp' }),
+        el('span', { textContent: social.whatsapp.label || 'Join our WhatsApp for updates' }),
       ])
     );
   }
-  if (social.whatsapp) {
-    grid.appendChild(
-      el('a', { href: social.whatsapp.url, target: '_blank', rel: 'noopener', className: 'social-card' }, [
-        el('img', { src: social.whatsapp.image, alt: 'WhatsApp' }),
-        el('span', { textContent: 'Join our WhatsApp' }),
+
+  if (social.instagram) {
+    stack.appendChild(
+      el('a', { href: social.instagram.url, target: '_blank', rel: 'noopener', className: 'cta-card cta-instagram' }, [
+        el('img', { src: social.instagram.image, alt: 'Instagram' }),
+        el('span', { textContent: social.instagram.label || 'Follow us on Instagram' }),
       ])
     );
   }
 }
 
-function renderCollaborators(config) {
-  const grid = document.getElementById('collab-grid');
+function renderCardGrid(gridId, entries) {
+  const grid = document.getElementById(gridId);
   grid.innerHTML = '';
-  (config.collaborators || []).forEach((c) => {
+  (entries || []).forEach((c) => {
     grid.appendChild(
       el('a', { href: c.url, target: '_blank', rel: 'noopener', className: 'collab-card' }, [
         el('img', { src: c.logo, alt: c.name }),
