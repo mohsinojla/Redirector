@@ -5,19 +5,19 @@ function el(tag, props, children) {
   return node;
 }
 
-fetch('config.json?_=' + Date.now())
-  .then((res) => res.json())
-  .then((config) => {
-    renderHero(config);
-    renderGallery(config);
-    renderSocial(config);
-    renderCollaborators(config);
-  })
-  .catch((err) => {
-    console.error('Failed to load config.json', err);
+(function () {
+  const config = window.SITE_CONFIG;
+  if (!config) {
+    console.error('SITE_CONFIG not found — make sure config.js is loaded before script.js');
     document.body.innerHTML =
       '<p style="color:#fff;text-align:center;margin-top:40px;">Could not load event configuration.</p>';
-  });
+    return;
+  }
+  renderHero(config);
+  renderGallery(config);
+  renderSocial(config);
+  renderCollaborators(config);
+})();
 
 function renderHero(config) {
   const hero = document.getElementById('hero-banner');
