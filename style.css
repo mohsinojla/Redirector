@@ -39,33 +39,38 @@ body {
   object-fit: cover;
 }
 
-.hero-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 44px;
+/* Register — its own solid section so it reads as a real button, not part of the banner art */
+.register-section {
+  background: #000;
+  text-align: center;
+  padding: 36px 20px 44px;
+  border-bottom: 1px solid #221a10;
 }
 
 .register-btn {
   display: inline-block;
-  background: linear-gradient(90deg, var(--accent), #ff5e00);
-  color: #111;
-  font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: 1px;
-  padding: 18px 52px;
-  border-radius: 50px;
+  background: #fff;
+  color: #000;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  padding: 22px 72px;
+  border-radius: 14px;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(255, 138, 0, 0.45);
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 6px rgba(255, 138, 0, 0.18), 0 12px 30px rgba(0, 0, 0, 0.5);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: register-pulse 2.2s ease-in-out infinite;
 }
 
 .register-btn:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 12px 32px rgba(255, 138, 0, 0.6);
+  box-shadow: 0 0 0 8px rgba(255, 138, 0, 0.28), 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes register-pulse {
+  0%, 100% { box-shadow: 0 0 0 6px rgba(255, 138, 0, 0.18), 0 12px 30px rgba(0, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(255, 138, 0, 0.05), 0 12px 30px rgba(0, 0, 0, 0.5); }
 }
 
 /* CTA stack: WhatsApp + Instagram */
@@ -174,7 +179,7 @@ footer {
 
 @media (max-width: 500px) {
   h2.section-title { font-size: 1.3rem; }
-  .register-btn { font-size: 1.05rem; padding: 15px 36px; }
+  .register-btn { font-size: 1.2rem; padding: 18px 44px; width: 100%; max-width: 340px; }
   .cta-card { font-size: 1rem; padding: 18px 20px; }
   .cta-card img { width: 44px; height: 44px; }
 }
